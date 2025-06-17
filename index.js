@@ -1,6 +1,7 @@
 // Server creation and configuration
 const http = require("node:http");
 const app = require("./src/app");
+const { connectToDB } = require("./src/config/db");
 
 // Config .env
 require("dotenv").config();
@@ -14,6 +15,7 @@ server.listen(PORT);
 // Listeners
 server.on("listening", () => {
     console.log(`Server listening on port ${PORT}`);
+    connectToDB();
 });
 
 server.on("error", (error) => {
