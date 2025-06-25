@@ -44,7 +44,7 @@ const Song = sequelize.define('Song',
 
 const Artist = sequelize.define('Artist',
     {
-        nme: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false
         },

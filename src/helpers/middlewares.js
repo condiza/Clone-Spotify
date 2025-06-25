@@ -17,7 +17,7 @@ const checkToken = async ( req, res, next) =>{
         return res.status(403).json({ message: "User no aotorzate"})
     }
 
-    const user = User.findByPk(payload.id);
+    const user = await User.findByPk(payload.id);
 
     req.user = user;
 
